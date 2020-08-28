@@ -1,0 +1,57 @@
+ion-content {
+  --background: var(--ion-color-success);
+  font-family: "Times New Roman", Times, serif;
+}
+
+ion-slides {
+  background-color: white;
+  height: 100%;
+  max-width: 800px;
+}
+
+.swiper-slide {
+  display: block;
+  margin-bottom: 64px;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+ion-slide > h1, h2 {
+  margin: 0;
+  color: var(--ion-color-primary);
+}
+
+ion-slide > h1 {
+  color: white;
+}
+
+ion-slide > h2 {
+  color: var(--ion-color-success);
+  text-transform: uppercase;
+}
+
+ion-slide > p {
+  font-style: italic;
+  font-size: 22px;
+  padding: 1em;
+  color: aliceblue;
+}
+
+ion-slide > ion-icon {
+  color: var(--ion-color-success);
+  font-size: 48px;
+}
+
+ion-slide > ion-icon[name="close"] {
+  float: right;
+  color: whitesmoke;
+  font-size: 34px;
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+ion-slide > img {
+  max-height: 15%;
+  max-width: 30%;
+  margin: 64px 0;
+}

@@ -1,0 +1,45 @@
+<ion-content>
+  <figure class="ion-text-center ion-padding ion-hide-sm-up">
+    <img src="assets/img/find.png" alt="buscar">
+  </figure>
+
+  <form [formGroup] = "entForm" (ngSubmit)="loginKeys(entForm.value)" class="ion-margin">
+    <!--Con ionic-item le decimos a ionic renderice todo lo que esta dentro como si fuera el item de una lista -->
+    <ion-item>
+      <ion-label>cveEnt:</ion-label>
+      <ion-input formControlName = "cveEnt"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validationsList.cveEnt">
+        <div 
+        class="warning-text"
+        *ngIf="
+          (entForm.get('cveEnt').hasError(validation.type) && entForm.get('cveEnt').dirty) ||
+          (entForm.get('cveEnt').touched && entForm.get('cveEnt').hasError(validation.type))"
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label>cveEnc:</ion-label>
+      <ion-input  formControlName = "cveEnc"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validationsList.cveEnc">
+        <div
+        class="warning-text" 
+        *ngIf="
+          (entForm.get('cveEnc').hasError(validation.type) && entForm.get('cveEnc').dirty) ||
+          (entForm.get('cveEnc').touched && entForm.get('cveEnc').hasError(validation.type))"
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-button class="ion-margin-top" expand="full" color="success" type="submit" [disabled]="entForm.invalid">Validar</ion-button>
+
+  </form>
+  <ng-container class="ion-text-center">
+    {{errorMessage}}
+  </ng-container>

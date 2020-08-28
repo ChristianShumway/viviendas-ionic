@@ -1,0 +1,32 @@
+<!-- los menus contienen un elemento padre llamado ion-split-pane -->
+<!-- Contiene dos elementos que es el ion-menu y el ion-router-outlet -->
+<ion-split-pane contentId="content">
+  <!-- menu -->
+  <!-- side: lugar inicio trancisión de nuestro menu  -->
+  <ion-menu contentId="content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title> Menú </ion-title>
+        <ion-buttons slot="start">
+          <ion-button (click)="closeMenu()">
+            <ion-icon name="arrow-back-outline" size="large"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <!-- ion-list permite encadenar items en orden vertical y esos items pueden usarse como enlaces -->
+      <ion-list>
+        <ion-item (click)="logOut()">
+          <ion-icon name="log-out-outline" color="success" slot="start"></ion-icon>Salir
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- 
+    lugar donde se va a renderizar nuestro menu, 
+    * id: nos permite ver que estamos renderizando.
+    * main: directiva que valida que este es el contenido principal.
+  -->
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>
