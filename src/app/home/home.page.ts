@@ -96,7 +96,7 @@ export class HomePage {
   private initMap(): void {
     this.map = L.map('map',{ crs: L.CRS.EPSG900913}).setView([40,-100], 4);
 
-    this.layer = L.tileLayer.wms('geoserver/mnv/wms?', {
+    this.layer = L.tileLayer.wms('https://gaia.inegi.org.mx/NLB_CE/no_cross/?http://10.106.12.120:8080/geoserver/mnv/wms?', {
       layers: 'td_localidades',
       transparent:true,
       format: 'image/gif',
@@ -123,7 +123,7 @@ export class HomePage {
 
 
   layerWMS(){
-    var wmsLayer = L.tileLayer.wms("NLB_CE/balancer.do?map=/opt/map/viviendaproduc.map&", {
+    var wmsLayer = L.tileLayer.wms("https://gaia.inegi.org.mx/NLB_CE/no_cross/?https://gaia.inegi.org.mx/NLB_CE/balancer.do?map=/opt/map/viviendaproduc.map&", {
 			layers: 'c100,c103t,c101,c108t,c109t,c113t,c500t,c530t,c102t,c114t,c110,c501t,c531t,c809,c502t,c532t,c503t,c536t,c533t,c537t,c112t,c119t,c111t,c539t,c116t,c504t,c529t,c534t,c535t,c505t',
 			format: 'image/png',
 			transparent: true,

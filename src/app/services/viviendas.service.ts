@@ -5,18 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ViviendasService {
-  
+  urlService = 'https://gaia.inegi.org.mx/NLB_CE/no_cross/?http://10.106.12.178:8084/leaflet_web';
   constructor(
     private http: HttpClient
   ) { }
 
   async getViviendas(cveEnt, cveEnc) {
-    const livingPlaces = await this.http.get<any>( `leaflet_web/getViviendas.do?cve_ent=${cveEnt}&cve_enc=${cveEnc}`).toPromise(); 
+    const livingPlaces = await this.http.get<any>( `${this.urlService}/getViviendas.do?cve_ent=${cveEnt}&cve_enc=${cveEnc}`).toPromise(); 
     return livingPlaces;
   }
 
   makePopup(lon: any, lat: any): string {
     return `<div>Latitud: ${lat}</div> <div>Longitud: ${lon}</div>`
   }
-  
+
 }
