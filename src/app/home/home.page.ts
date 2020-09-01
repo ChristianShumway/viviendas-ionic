@@ -45,7 +45,6 @@ export class HomePage {
 
   ionViewDidEnter() {
     // this.leafletMap();
-    this.initMap();
     this.getViviendas();
   }
 
@@ -64,7 +63,8 @@ export class HomePage {
   async getViviendas() {
 
     this.listKeys = await this.storage.get('isKeysRegistered');
-    
+    await  this.initMap();
+
     await this.viviendasService.getViviendas(this.listKeys.cveEnt, this.listKeys.cveEnc)
       .then( response => {
         this.listaViviendas = response;
@@ -129,7 +129,7 @@ export class HomePage {
 			transparent: true,
 			attribution: "INEGI 2020",
 
-			EDO:'01',
+			EDO: this.listKeys.cveEnt,
 			NIVEL:'PB',
 			CONTORNO:'FALSE',
 			EAR:'TRUE',

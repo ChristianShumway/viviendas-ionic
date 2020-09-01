@@ -1,9 +1,9 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "viviendas.inegi.org"
+        // applicationId "viviendas.inegi.org"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
