@@ -44,20 +44,7 @@ export class HomePage {
   ) {}
 
   ionViewDidEnter() {
-    // this.leafletMap();
     this.getViviendas();
-  }
-
-  leafletMap() {
-    this.map = new L.Map('mapId2').setView([12.972442, 77.594563], 13);
-
-    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-      attribution: 'edupala.com'
-    }).addTo(this.map);
-
-    const markPoint = L.marker([12.972442, 77.594563]);
-    markPoint.bindPopup('<p>Tashi Delek - Bangalore.</p>');
-    this.map.addLayer(markPoint);
   }
 
   async getViviendas() {
